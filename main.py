@@ -14,8 +14,9 @@ customtkinter.set_default_color_theme("dark-blue")
 frame = customtkinter.CTkFrame(app)
 frame.pack() 
 
+
 # Subtracting columns with pandas
-data = pd.read_excel(r"C:\\Users\\Kailey\\OneDrive\\Documents\\Python", engine="openpyxl")
+data = pd.read_excel(r"c:\\Users\\Kailey\\OneDrive\\Documents\\Python\data.xlsx", engine="openpyxl")
 dataframe = pd.DataFrame(data, columns=["Credits", "Total Creds Needed"])
 dataframe['Total Creds Needed'] = dataframe['Credits'] - dataframe['Total Creds Needed']
 
@@ -32,7 +33,7 @@ def enter_data():
     total_creds = total_credits_entry.get()
 
 # Finds and opens excell workbook 
-    filepath = "C:\\Users\\Kailey\\OneDrive\\Documents\\Python"
+    filepath = r"c:\\Users\\Kailey\\OneDrive\\Documents\\Python\data.xlsx"
     if not os.path.exists(filepath):
        workbook = openpyxl.Workbook()
        sheet = workbook.active
