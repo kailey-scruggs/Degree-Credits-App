@@ -9,14 +9,13 @@ import pandas as pd
 app = customtkinter.CTk()
 app.geometry("500x500")
 app.title("Credits Needed To Finish")
-customtkinter.set_appearance_mode("light")
+customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("dark-blue")
 frame = customtkinter.CTkFrame(app)
 frame.pack() 
 
-
 # Subtracting columns with pandas
-data = pd.read_excel(r"c:\\Users\\Kailey\\OneDrive\\Documents\\Python\data.xlsx", engine="openpyxl")
+data = pd.read_excel(r"c:\\Users\\Kailey\\Documents\\Python\\data.xlsx", engine="openpyxl")
 dataframe = pd.DataFrame(data, columns=["Credits", "Total Creds Needed"])
 dataframe['Total Creds Needed'] = dataframe['Credits'] - dataframe['Total Creds Needed']
 
@@ -33,7 +32,7 @@ def enter_data():
     total_creds = total_credits_entry.get()
 
 # Finds and opens excell workbook 
-    filepath = r"c:\\Users\\Kailey\\OneDrive\\Documents\\Python\data.xlsx"
+    filepath = "c:\\Users\\Kailey\\Documents\\Python\\data.xlsx" 
     if not os.path.exists(filepath):
        workbook = openpyxl.Workbook()
        sheet = workbook.active
@@ -107,3 +106,4 @@ button.grid(row=3, column=0, sticky="news", padx=20, pady=20)
 
 
 app.mainloop() 
+
