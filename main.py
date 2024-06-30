@@ -9,7 +9,7 @@ import pandas as pd
 app = customtkinter.CTk()
 app.geometry("500x500")
 app.title("Credits Needed To Finish")
-customtkinter.set_appearance_mode("system")
+customtkinter.set_appearance_mode("light")
 customtkinter.set_default_color_theme("dark-blue")
 frame = customtkinter.CTkFrame(app)
 frame.pack() 
